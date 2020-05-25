@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src = "angular.min.js"></script>
+    <script src = "app1.js"></script>
+    <title>Dependency Injection</title>
+  </head>
+  <body ng-app="capital">
+    <h1>Dependency injection</h1>
+    <br>
+    <div>
+      <div ng-controller = "capitalController">
+    <h4>Enter name :</h4>
+    <input type = "text" ng-model="name" ng-blur="upper();"></div>
+  </div>
+  </body>
+</html>
