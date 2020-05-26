@@ -5,9 +5,12 @@
   MsgController.$inject = ['$scope'];
   function MsgController($scope){
     $scope.name = "darshan";
-
+    $scope.current = "off";
     $scope.sayMessage = function(){
-      return "darshan likes to eat spicy";
+      return "Click the button for on and off of light";
+    };
+    $scope.show = function(){
+      $scope.current = "on";
     };
   }
 })();

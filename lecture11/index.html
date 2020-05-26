@@ -9,8 +9,14 @@
   </head>
   <body ng-app="Msgapp">
 <h1>Expressions and Interpolations</h1>
-<div ng-controller="MsgController">Message is:<br>
-{{name}}
+  <div ng-controller="MsgController">
+          {{name}} has message for you:<br>
+                {{sayMessage()}}
+                  <div>
+                    <button ng-click="show()">Click to switch on light</button>
+                    <br>
+                    <img ng-src="images/bulb_{{current}}.png">
+                    </div>
   </div>
   </body>
 </html>
