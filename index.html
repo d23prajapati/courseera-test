@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <style> body{font-size : 1.5em;}</style>
+    <title>Lunch checker</title>
+  </head>
+  <body ng-app="LunchCheck">
+    <h1 style="text-align:center;color:blue;">Lunch Checker</h1>
+    <br>
+    <div ng-controller="LunchCheckController" style="text-align:center;">
+    <input type = "text" ng-model="item" style="height:30px;width:300px;border-radius:16px"><br>
+    <button ng-click="splitItem()" style="height:30px;width:300px;background-color:grey;border-radius:16px;">Check if too much</button>
+    <br><br>
+      {{message}}
+    </div>
+  </body>
+</html>
