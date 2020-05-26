@@ -10,7 +10,7 @@
       var arr = $scope.item.split(",");
 
       if($scope.item=="")
-              {$scope.message="PLease enter some food first!!";}
+              {$scope.message="Please enter data first!";}
       else if(arr.length <= 3)
               {$scope.message="Enjoy!";}
       else {$scope.message="Too much!";}

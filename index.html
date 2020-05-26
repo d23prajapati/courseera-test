@@ -11,7 +11,10 @@
     <h1 style="text-align:center;color:blue;">Lunch Checker</h1>
     <br>
     <div ng-controller="LunchCheckController" style="text-align:center;">
-    <input type = "text" ng-model="item" style="height:30px;width:300px;border-radius:16px"><br>
+
+    <input type = "text" ng-model="item" style="height:30px;width:300px;border-radius:16px">
+    <p>Empty space betwwen commas i.e. ", ," is not considered in the item count.</p>
+    <br>
     <button ng-click="splitItem()" style="height:30px;width:300px;background-color:grey;border-radius:16px;">Check if too much</button>
     <br><br>
       {{message}}
