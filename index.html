@@ -1,23 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html ng-app="ShoppingListCheckOff">
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style> body{font-size : 1.5em;}</style>
-    <title>Lunch checker</title>
+    <style>
+      #tobuy{float:left;}
+      #bought{float:center;margin-left:700px;}
+      body{font-family: arial;background-color: skyblue;}
+      #list{font-size: 20px;}
+      #message{color:red;font-size: 25px;}
+      button{width: 100px;background-color: white;color:green; border-color: green;border-radius: 20px;}
+      h1{font-size: 60px;}
+    </style>
+    <title>Check off</title>
   </head>
-  <body ng-app="LunchCheck">
-    <h1 style="text-align:center;color:blue;">Lunch Checker</h1>
-    <br>
-    <div ng-controller="LunchCheckController" style="text-align:center;">
+  <body>
+    <h1 style="text-align:center;">Check off shopping list</h1><br><br>
+    <div id="tobuy" ng-controller='ToBuyController as buy'>
+      <h2>To buy list</h2>
+      <ul id="list">
+        <li ng-repeat="item in buy.items">
+           Buy {{item.quantity}} {{item.name}}
+           <button ng-click="buy.removeItem($index,item.name,item.quantity);">Bought</button>
+        </li>
+      </ul>
+      <div id="message" ng-show="buy.items.length==0">
+        Everything is bought!
+      </div>
+    </div>
 
-    <input type = "text" ng-model="item" style="height:30px;width:300px;border-radius:16px">
-    <p>Empty space betwwen commas i.e. ", ," is not considered in the item count.</p>
-    <br>
-    <button ng-click="splitItem()" style="height:30px;width:300px;background-color:grey;border-radius:16px;">Check if too much</button>
-    <br><br>
-      {{message}}
+    <!--Bought list-->
+    <div  id="bought" ng-controller='AlreadyBoughtController as alreadyBought'>
+      <h2>Bought list</h2>
+      <ul id="list">
+        <li ng-repeat="item in alreadyBought.items">
+          Bought {{item.quantity}} {{item.name}}
+        </li>
+      </ul>
+      <div id="message"ng-show="alreadyBought.items.length<=0">
+        Nothing bought yet!
+      </div>
     </div>
   </body>
 </html>
