@@ -1,46 +1,23 @@
 <!DOCTYPE html>
-<html ng-app="ShoppingListCheckOff">
+<html ng-app="NarrowItDownApp">
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <style>
-      #tobuy{float:left;}
-      #bought{float:center;margin-left:700px;}
-      body{font-family: arial;background-color: skyblue;}
-      #list{font-size: 20px;}
-      #message{color:red;font-size: 25px;}
-      button{width: 100px;background-color: white;color:green; border-color: green;border-radius: 20px;}
-      h1{font-size: 60px;}
-    </style>
-    <title>Check off</title>
+    <title></title>
   </head>
   <body>
-    <h1 style="text-align:center;">Check off shopping list</h1><br><br>
-    <div id="tobuy" ng-controller='ToBuyController as buy'>
-      <h2>To buy list</h2>
-      <ul id="list">
-        <li ng-repeat="item in buy.items">
-           Buy {{item.quantity}} {{item.name}}
-           <button ng-click="buy.removeItem($index,item.name,item.quantity);">Bought</button>
-        </li>
-      </ul>
-      <div id="message" ng-show="buy.items.length==0">
-        Everything is bought!
+    <h1>Narrow Down your Food Item</h1>
+    <div ng-controller="NarrowItDownController as list">
+      <div>
+      <input type="text" placeholder="Search term" ng-model="list.searchTerm">
       </div>
-    </div>
-
-    <!--Bought list-->
-    <div  id="bought" ng-controller='AlreadyBoughtController as alreadyBought'>
-      <h2>Bought list</h2>
-      <ul id="list">
-        <li ng-repeat="item in alreadyBought.items">
-          Bought {{item.quantity}} {{item.name}}
-        </li>
-      </ul>
-      <div id="message"ng-show="alreadyBought.items.length<=0">
-        Nothing bought yet!
+      <div>
+        <button ng-click="list.getMenu();">Narrow It Down For Me!</button>
       </div>
+      <br><br>
+      <found-items found-items="list.found" on-remove="list.remove(index)" title="{{list.title}}">
+      </found-items>
     </div>
   </body>
 </html>
