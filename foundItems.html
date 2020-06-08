@@ -11,8 +11,7 @@
 <td>{{item.short_name}}</td>
 <td>{{item.name}}</td>
 <td>{{item.description}}</td>
-<td><button class="btn btn-default" ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+<td><button ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
 </tr>
 </tbody>
 </table>
-<!-- <div class="emptyMessage" ng-if="list.foundNothing()">Nothing found!</div> -->
