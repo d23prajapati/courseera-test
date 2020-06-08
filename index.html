@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html ng-app="NarrowItDownApp">
+<!doctype html>
+<html ng-app='NarrowItDownApp'>
   <head>
-    <meta charset="utf-8">
-    <script src="angular.min.js"></script>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="angular.min.js"></script>
     <script src="app.js"></script>
-    <title></title>
   </head>
-  <body>
-    <h1>Narrow Down your Food Item</h1>
-    <div ng-controller="NarrowItDownController as list">
-      <div>
-      <input type="text" placeholder="Search term" ng-model="list.searchTerm">
-      </div>
-      <div>
-        <button ng-click="list.getMenu();">Narrow It Down For Me!</button>
-      </div>
-      <br><br>
-      <found-items found-items="list.found" on-remove="list.remove(index)" title="{{list.title}}">
-      </found-items>
+<body>
+   <div class="container" ng-controller='NarrowItDownController as list'>
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" placeholder="search term" class="form-control" ng-model='list.searchTerm'>
     </div>
-  </body>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click='list.getMenu()'>Narrow It Down For Me!</button>
+    </div>
+      <br><br><br>
+    <found-items
+    found-items="list.found"
+    on-remove="list.removeItem(index)"
+    title="{{list.title}}"></found-items>
+
+
+  </div>
+
+</body>
 </html>
