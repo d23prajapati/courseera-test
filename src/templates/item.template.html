@@ -1,7 +1,17 @@
-<h3>Item</h3>
-
-  <div ng-repeat="item in itemList.items">
-    Item Name: {{ item.name }}<br>
-    Short name: {{ item.short_name }}<br>
-    Description: {{ item.description }}
-    </div>
+<h1>Item</h1>
+<a ui-sref="home">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a ui-sref="categories">CATEGORIES</a>
+<table>
+  <thead>
+    <th>Short Name</th>
+    <th>Item Name</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in itemList.items">
+      <td>{{ item.short_name }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.description }}</td>
+    </tr>
+  </tbody>
+</table>
