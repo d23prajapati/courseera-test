@@ -20,7 +20,7 @@
     service.getItemsForCategory = function(categoryShortName){
       return $http({
         method:"GET",
-        url:(ApiBasePath + "menu_items.json?category="),
+        url:(ApiBasePath + "menu_items.json?category=" + categoryShortName),
         params: {
           category: categoryShortName
         }
