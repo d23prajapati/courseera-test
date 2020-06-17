@@ -10,7 +10,5 @@
         ctrl.userInfo = userInfo;
         ctrl.saved = !angular.equals(userInfo, {});
 
-        console.log('instantiated MyInfoController:', userInfo);
-
-    }
+            }
 })();
